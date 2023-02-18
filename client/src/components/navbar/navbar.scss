@@ -1,0 +1,38 @@
+.navbar {
+  background-color: black;
+  color: #fff;
+  margin: 0 auto;
+  padding: 0.75em;
+  display: flex;
+  max-width: 1200px;
+
+  &__buttons {
+    margin: 0 auto;
+    display: flex;
+    // gap: 0.8em;
+
+    a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 1.2rem;
+      padding: 0 0.8em;
+    }
+
+    a + a {
+      border-right: 1px solid var(--clr-green);
+    }
+  }
+
+  &__cart {
+    display: flex;
+    font-size: 1.3rem;
+
+    &-num-box {
+      display: none;
+    }
+
+    &-text {
+      display: none;
+    }
+  }
+}
