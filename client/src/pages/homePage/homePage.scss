@@ -33,6 +33,8 @@
 
   &__categories {
     position: relative;
+    z-index: 5000;
+
     &-dropdown {
       font-size: 1.25rem;
       width: 100%;
@@ -50,5 +52,16 @@
         color: var(--clr-green);
       }
     }
+  }
+
+  &__hero {
+    color: #fff;
+    font-size: 1.5rem;
+    text-align: center;
+    padding: 30% 0;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+      url("../../assets/hero-img.jpg");
+    background-size: cover;
+    background-position: center;
   }
 }

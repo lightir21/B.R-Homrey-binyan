@@ -8,6 +8,7 @@ const HomePage = () => {
 
   return (
     <div className="homePage">
+      {/* Header Section */}
       <header className="homePage__header">
         <div className="homePage__header-companyInfo">
           <p>סניף צומת גלעם: 04-8435172</p>
@@ -20,6 +21,8 @@ const HomePage = () => {
         </div>
       </header>
       <hr />
+
+      {/* Categories Section */}
       <section className="homePage__categories">
         <button
           className="homePage__categories-dropdown"
@@ -29,6 +32,13 @@ const HomePage = () => {
           קטגוריות
         </button>
         <CategoriesDropdown isCategoriesOpen={isCategoriesOpen} />
+      </section>
+
+      <section className="homePage__hero">
+        <h1>
+          שירות ואמינות
+          <br /> זאת הדרך שלנו
+        </h1>
       </section>
     </div>
   );
