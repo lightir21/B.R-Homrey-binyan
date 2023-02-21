@@ -52,7 +52,6 @@ const HomePage = () => {
         <ProductFigure />
         <ProductFigure />
         <ProductFigure />
-        <ProductFigure />
         <hr />
         <h3 className="homePage__subTitles">השירותים שלנו</h3>
         <OurServices />
