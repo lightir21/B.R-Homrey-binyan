@@ -56,12 +56,20 @@
 
   &__hero {
     color: #fff;
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     text-align: center;
     padding: 30% 0;
     background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
       url("../../assets/hero-img.jpg");
     background-size: cover;
     background-position: center;
+  }
+
+  &__hotProducts {
+    text-align: center;
+  }
+
+  &__subTitles {
+    font-size: 1.4rem;
   }
 }

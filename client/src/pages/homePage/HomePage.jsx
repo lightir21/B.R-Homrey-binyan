@@ -1,7 +1,11 @@
 import "./homePage.scss";
 import { FaLeaf } from "react-icons/fa";
 import { GiHamburgerMenu } from "react-icons/gi";
-import { CategoriesDropdown } from "../../components";
+import {
+  CategoriesDropdown,
+  OurServices,
+  ProductFigure,
+} from "../../components";
 import { useState } from "react";
 const HomePage = () => {
   const [isCategoriesOpen, setIsCategoriesOpen] = useState(false);
@@ -39,6 +43,19 @@ const HomePage = () => {
           שירות ואמינות
           <br /> זאת הדרך שלנו
         </h1>
+      </section>
+
+      <section className="homePage__hotProducts">
+        <h3 className="homePage__subTitles">מוצרים חמים</h3>
+        <hr />
+        <ProductFigure />
+        <ProductFigure />
+        <ProductFigure />
+        <ProductFigure />
+        <ProductFigure />
+        <hr />
+        <h3 className="homePage__subTitles">השירותים שלנו</h3>
+        <OurServices />
       </section>
     </div>
   );

@@ -1,11 +1,12 @@
 .categoriesDropdown {
-  width: 100%;
+  width: 90%;
   list-style: none;
   text-align: center;
   font-size: 1.25rem;
   font-weight: 600;
   position: absolute;
   top: calc(100% + 10px);
+  left: 5%;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
   opacity: 0;
   border-radius: 8px;

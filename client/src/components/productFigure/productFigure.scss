@@ -1,0 +1,29 @@
+.productFigure {
+  padding: 0.5em;
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.3);
+  margin: 0.5rem;
+  border-radius: 8px;
+
+  &__imageContainer {
+    width: 100%;
+
+    img {
+      width: 70%;
+    }
+  }
+
+  &__title {
+    font-size: 1.1rem;
+    font-weight: 600;
+  }
+
+  &__btn {
+    padding: 0.3em 0.8em;
+    border: none;
+    border-radius: 8px;
+
+    & + & {
+      margin-right: 1.5rem;
+    }
+  }
+}

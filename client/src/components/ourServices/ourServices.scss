@@ -1,0 +1,16 @@
+.ourServices {
+  font-size: 1.4rem;
+
+  p {
+    margin-top: -0.3em;
+  }
+
+  &__icon {
+    font-size: 5rem;
+  }
+
+  &__box + &__box {
+    margin-top: 1rem;
+    border-top: 1px solid var(--clr-green);
+  }
+}

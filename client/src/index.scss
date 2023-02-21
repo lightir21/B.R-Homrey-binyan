@@ -2,6 +2,7 @@
 ::after,
 ::before {
   box-sizing: border-box;
+  font-family: "Rubik", sans-serif;
 }
 
 ul {
@@ -15,4 +16,14 @@ ul {
 
 img {
   width: 100%;
+}
+
+.btn {
+  color: #fff;
+  background-color: #333;
+
+  &-green {
+    color: #fff;
+    background-color: #48ac25;
+  }
 }
