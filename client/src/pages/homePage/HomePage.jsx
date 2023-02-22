@@ -18,7 +18,11 @@ const HomePage = () => {
           <p>סניף צומת גלעם: 04-8435172</p>
           <p>סניף ביאליק 3, ק.אתא: 04-6391913</p>
         </div>
-        <input type="text" className="homePage__header-search" />
+        <input
+          type="text"
+          className="homePage__header-search"
+          placeholder="חיפוש..."
+        />
         <div className="homePage__header-logo">
           <FaLeaf className="homePage__header-logo-icon" />
           ב.ר חומרי בניין

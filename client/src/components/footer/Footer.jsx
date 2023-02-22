@@ -5,7 +5,6 @@ const Footer = () => {
   return (
     <div className="footer">
       {categories.map((cat) => {
-        console.log(cat);
         return (
           <div>
             <h4>{cat.text}</h4>
