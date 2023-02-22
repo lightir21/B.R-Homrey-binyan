@@ -1,0 +1,10 @@
+.footer {
+  background-color: #000;
+  color: #fff;
+  padding: 1em;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  p {
+    font-size: 0.75rem;
+  }
+}

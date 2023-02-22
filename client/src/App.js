@@ -1,5 +1,5 @@
 import { BrowserRouter } from "react-router-dom";
-import { CategoriesDropdown, Navbar } from "./components";
+import { Footer, Navbar } from "./components";
 import { HomePage } from "./pages";
 function App() {
   return (
@@ -7,6 +7,7 @@ function App() {
       <BrowserRouter>
         <Navbar />
         <HomePage />
+        <Footer />
       </BrowserRouter>
     </div>
   );

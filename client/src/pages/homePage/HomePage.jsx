@@ -53,6 +53,9 @@ const HomePage = () => {
         <ProductFigure />
         <ProductFigure />
         <hr />
+      </section>
+
+      <section className="homePage__services">
         <h3 className="homePage__subTitles">השירותים שלנו</h3>
         <OurServices />
       </section>

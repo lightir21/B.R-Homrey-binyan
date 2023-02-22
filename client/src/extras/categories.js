@@ -2,6 +2,14 @@ const categories = [
   {
     id: 1,
     text: "ציוד טכני",
+    subCategories: [
+      {
+        id: 1,
+        text: "מקדחות",
+      },
+      { id: 2, text: "מברגים" },
+      { id: 3, text: "פתישונים" },
+    ],
   },
   {
     id: 2,
