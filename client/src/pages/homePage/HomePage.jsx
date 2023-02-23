@@ -52,10 +52,12 @@ const HomePage = () => {
       <section className="homePage__hotProducts">
         <h3 className="homePage__subTitles">מוצרים חמים</h3>
         <hr />
-        <ProductFigure />
-        <ProductFigure />
-        <ProductFigure />
-        <ProductFigure />
+        <div className="homePage__hotProducts-container">
+          <ProductFigure />
+          <ProductFigure />
+          <ProductFigure />
+          <ProductFigure />
+        </div>
         <hr />
       </section>
 

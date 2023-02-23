@@ -6,10 +6,10 @@ const Footer = () => {
     <div className="footer">
       {categories.map((cat) => {
         return (
-          <div>
+          <div key={cat.id}>
             <h4>{cat.text}</h4>
             {cat.subCategories !== undefined
-              ? cat.subCategories.map((sub) => <p>{sub.text}</p>)
+              ? cat.subCategories.map((sub) => <p key={sub.id}>{sub.text}</p>)
               : ""}
           </div>
         );
