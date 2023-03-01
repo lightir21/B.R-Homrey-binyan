@@ -16,8 +16,12 @@ const ProductPage = () => {
         <div className="productPage__description">
           <h4 className="productPage__subHeading">{subHeading}</h4>
           <ul className="productPage__list">
-            {advantagesList.map((item) => {
-              return <li className="productPage__list-item">{item}</li>;
+            {advantagesList.map((item, i) => {
+              return (
+                <li key={i} className="productPage__list-item">
+                  {item}
+                </li>
+              );
             })}
           </ul>
           <hr />

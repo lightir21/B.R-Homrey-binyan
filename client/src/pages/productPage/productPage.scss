@@ -1,5 +1,6 @@
 .productPage {
   margin: 0.2rem;
+  font-size: 1.25rem;
 
   &__container {
     display: flex;
@@ -9,6 +10,10 @@
   &__heading,
   &__subHeading {
     text-align: center;
+  }
+
+  &__subHeading {
+    font-size: 2rem;
   }
 
   &__list {
