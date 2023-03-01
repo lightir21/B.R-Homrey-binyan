@@ -1,0 +1,23 @@
+{
+  "name": "b-r-holmrey-binyain",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "server": "nodemon server.js --ignore client",
+    "client": "npm start --prefix ../client",
+    "start": "concurrently --kill-others-on-fail \"npm run server\" \" npm run client \""
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "mongoose": "^7.0.0"
+  },
+  "devDependencies": {
+    "concurrently": "^7.6.0",
+    "nodemon": "^2.0.20"
+  }
+}
