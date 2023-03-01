@@ -6,9 +6,9 @@ const Navbar = () => {
   return (
     <nav className="navbar">
       <div className="navbar__buttons">
-        <a href="#">ראשי</a>
-        <a href="#">אודות</a>
-        <a href="#">צרו קשר</a>
+        <Link to="/">ראשי</Link>
+        <Link to="/about">אודות</Link>
+        <Link to="/contantUs">צרו קשר</Link>
       </div>
       <div className="navbar__cart">
         <div className="navbar__cart-num-box">

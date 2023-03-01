@@ -1,5 +1,6 @@
 import "./header.scss";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { FaLeaf } from "react-icons/fa";
 import { GiHamburgerMenu } from "react-icons/gi";
 import CategoriesDropdown from "../categoriesDropdown/CategoriesDropdown";
@@ -15,10 +16,10 @@ const Header = () => {
           <p>סניף ביאליק 3, ק.אתא: 04-6391913</p>
         </div>
         <input type="text" className="header-search" placeholder="חיפוש..." />
-        <div className="header-logo">
+        <Link to="/" className="header-logo">
           <FaLeaf className="header-logo-icon" />
           ב.ר חומרי בניין
-        </div>
+        </Link>
       </header>
       <hr />
 
