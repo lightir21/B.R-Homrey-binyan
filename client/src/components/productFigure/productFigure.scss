@@ -6,10 +6,6 @@
 
   &__imageContainer {
     width: 100%;
-
-    // img {
-    //   width: 70%;
-    // }
   }
 
   &__title {
@@ -18,13 +14,12 @@
   }
 
   &__btn {
+    display: block;
     padding: 0.6em 0;
     border: none;
     border-radius: 8px;
     width: 100%;
-
-    & + & {
-      margin-top: 0.75rem;
-    }
+    text-decoration: none;
+    margin-top: 0.75rem;
   }
 }
