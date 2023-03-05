@@ -1,0 +1,23 @@
+.cartPage {
+  width: 95%;
+  height: 100%;
+  background-color: #fff;
+  z-index: 999999;
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 1rem;
+  padding-top: 2rem;
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.3);
+
+  & h2 {
+    text-align: center;
+  }
+
+  &__footer {
+    p {
+      color: var(--clr-green);
+      font-weight: 600;
+    }
+  }
+}

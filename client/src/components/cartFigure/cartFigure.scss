@@ -1,0 +1,20 @@
+.cartFigure {
+  display: flex;
+  align-items: center;
+
+  & h3 {
+    margin: 0;
+  }
+
+  &__img-box {
+    flex: 1;
+  }
+
+  &__details {
+    flex: 4;
+
+    &-price {
+      font-weight: 600;
+    }
+  }
+}
