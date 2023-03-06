@@ -14,12 +14,14 @@ const CartFigure = () => {
       </div>
       <div className="cartFigure__details">
         <h3>{productName}</h3>
-        <p className="cartFigure__details-price">
-          מחיר: <span>{price}</span>
-        </p>
-        <p>
-          כמות: <input type="number" />
-        </p>
+        <div className="cartFigure__details-priceBox">
+          <p className="cartFigure__details-price">
+            מחיר: <span>{price}₪</span>
+          </p>
+          <p>
+            כמות: <input type="number" />
+          </p>{" "}
+        </div>
       </div>
       <AiOutlineClose className="cartFigure__delete" />
     </div>

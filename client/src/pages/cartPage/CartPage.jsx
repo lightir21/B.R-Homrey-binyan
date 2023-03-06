@@ -4,23 +4,40 @@ import { motion, AnimatePresence } from "framer-motion";
 
 const CartPage = ({ showCart }) => {
   return (
-    <AnimatePresence>
+    <>
       {showCart && (
-        <motion.div className="cartPage">
-          <h2>העגלה שלך</h2>
-
+        <motion.div
+          className="cartPage"
+          initial={{ x: "-100vw" }}
+          animate={{ x: 0 }}
+          exit={{ x: "-100vw" }}
+          transition={{ type: "spring", mass: 0.1 }}
+        >
+          <h2>העגלה שלי</h2>
+          <hr />
           <div className="cartPage__itemsList">
+            <CartFigure />
+            <CartFigure />
+            <CartFigure />
+            <CartFigure />
+            <CartFigure />
+            <CartFigure />
+            <CartFigure />
+            <CartFigure />
             <CartFigure />
           </div>
           <div className="cartPage__footer">
             <hr />
             <p>
-              סך הכל: <span>0</span>
+              סך הכל: <span>0₪</span>
             </p>
+            <button className="cartPage__footer-btn btn-green">
+              שלח הזמנה
+            </button>
           </div>
         </motion.div>
       )}
-    </AnimatePresence>
+    </>
   );
 };
 export default CartPage;

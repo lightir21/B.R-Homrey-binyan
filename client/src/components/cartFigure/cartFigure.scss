@@ -1,9 +1,12 @@
 .cartFigure {
   display: flex;
   align-items: center;
+  font-size: 1.2rem;
 
   & h3 {
     margin: 0;
+    font-size: 1.6rem;
+    font-weight: 500;
   }
 
   &__img-box {
@@ -14,7 +17,18 @@
     flex: 4;
 
     &-price {
-      font-weight: 600;
+      color: var(--clr-green);
+    }
+
+    input {
+      aspect-ratio: 1/1;
+      width: 1.6rem;
+    }
+
+    &-priceBox {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
     }
   }
 }

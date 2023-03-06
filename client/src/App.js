@@ -1,17 +1,21 @@
+import { AnimatePresence } from "framer-motion";
 import { useState } from "react";
 import { Route, Routes } from "react-router-dom";
 import { Footer, Navbar } from "./components";
-import { CartPage, HomePage, ProductPage } from "./pages";
+import { CartPage, HomePage, ProductPage, CategoryPage } from "./pages";
+
 function App() {
-  const [showCart, setShowCart] = useState(true);
+  const [showCart, setShowCart] = useState(false);
   return (
     <div className="App">
-      <Navbar />
-
-      {showCart && <CartPage showCart={showCart} />}
+      <Navbar setShowCart={setShowCart} />
+      <AnimatePresence>
+        {showCart && <CartPage showCart={showCart} />}
+      </AnimatePresence>
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/product/:id" element={<ProductPage />} />
+        <Route path="/category/:name" element={<CategoryPage />} />
       </Routes>
       <Footer />
     </div>
