@@ -1,5 +1,6 @@
 import "./footer.scss";
 import categories from "../../extras/categories";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -7,9 +8,22 @@ const Footer = () => {
       {categories.map((cat) => {
         return (
           <div key={cat.id}>
-            <h4>{cat.text}</h4>
+            <Link
+              to={`/category/${cat.text.replaceAll(" ", "-")}`}
+              className="footer__header"
+            >
+              {cat.text}
+            </Link>
             {cat.subCategories !== undefined
-              ? cat.subCategories.map((sub) => <p key={sub.id}>{sub.text}</p>)
+              ? cat.subCategories.map((sub) => (
+                  <Link
+                    to={`/category/${sub.text.replaceAll(" ", "-")}`}
+                    className="footer__subHeader"
+                    key={sub.id}
+                  >
+                    {sub.text}
+                  </Link>
+                ))
               : ""}
           </div>
         );

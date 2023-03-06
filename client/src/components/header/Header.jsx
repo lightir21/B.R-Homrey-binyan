@@ -1,12 +1,10 @@
 import "./header.scss";
-import { useState } from "react";
 import { Link } from "react-router-dom";
 import { FaLeaf } from "react-icons/fa";
 import { GiHamburgerMenu } from "react-icons/gi";
 import CategoriesDropdown from "../categoriesDropdown/CategoriesDropdown";
 import { useWindowDimensions } from "../../utils/useWindowDimensions";
-import CategoriesBar from "../categories/CategoriesBar";
-import { AnimatePresence } from "framer-motion";
+import CategoriesBar from "../categoriesBar/CategoriesBar";
 import { useAppStore } from "../../store/app-store";
 
 const Header = () => {

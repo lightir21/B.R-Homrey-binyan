@@ -5,7 +5,7 @@ import Header from "./header/Header";
 import Navbar from "./navbar/Navbar";
 import OurServices from "./ourServices/OurServices";
 import ProductFigure from "./productFigure/ProductFigure";
-import CategoriesBar from "./categories/CategoriesBar";
+import CategoriesBar from "./categoriesBar/CategoriesBar";
 export {
   Navbar,
   CategoriesDropdown,

@@ -1,5 +1,5 @@
 import { useParams } from "react-router-dom";
-import { Header } from "../../components";
+import { Header, ProductFigure } from "../../components";
 import "./categoryPage.scss";
 const CategoryPage = () => {
   const { name } = useParams();
@@ -14,6 +14,26 @@ const CategoryPage = () => {
           <option value="cheapToPricy">מיין מהזול ליקר</option>
           <option value="cheapToPricy">מיין מהיקר לזול</option>
         </select>
+        <div className="categoryPage__itemsList">
+          <ProductFigure />
+          <ProductFigure />
+          <ProductFigure />
+          <ProductFigure />
+          <ProductFigure />
+          <ProductFigure />
+          <ProductFigure />
+          <ProductFigure />
+          <ProductFigure />
+          <ProductFigure />
+          <ProductFigure />
+          <ProductFigure />
+          <ProductFigure />
+          <ProductFigure />
+          <ProductFigure />
+          <ProductFigure />
+          <ProductFigure />
+          <ProductFigure />
+        </div>
       </div>
     </div>
   );

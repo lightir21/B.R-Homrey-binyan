@@ -5,7 +5,18 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   font-size: 1.25rem;
-  p {
+
+  &__header {
+    display: inline-block;
+    font-size: 1.5rem;
+    color: #fff;
+    margin: 0.6rem 0;
+  }
+
+  &__subHeader {
+    display: block;
     font-size: 0.75em;
+    color: #fff;
+    margin: 0.6rem 0;
   }
 }
