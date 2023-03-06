@@ -4,9 +4,16 @@ import { Link } from "react-router-dom";
 import { FaLeaf } from "react-icons/fa";
 import { GiHamburgerMenu } from "react-icons/gi";
 import CategoriesDropdown from "../categoriesDropdown/CategoriesDropdown";
+import { useWindowDimensions } from "../../utils/useWindowDimensions";
+import CategoriesBar from "../categories/CategoriesBar";
+import { AnimatePresence } from "framer-motion";
+import { useAppStore } from "../../store/app-store";
 
 const Header = () => {
-  const [isCategoriesOpen, setIsCategoriesOpen] = useState(false);
+  const { isCategoriesOpen, setIsCategoriesOpen } = useAppStore(
+    (state) => state
+  );
+  const { isMobile } = useWindowDimensions();
 
   return (
     <>
@@ -25,14 +32,21 @@ const Header = () => {
 
       {/* Categories Section */}
       <section className="categories">
-        <button
-          className="categories-dropdown"
-          onClick={() => setIsCategoriesOpen((prev) => !prev)}
-        >
-          <GiHamburgerMenu className="categories-dropdown--icon" />
-          קטגוריות
-        </button>
-        <CategoriesDropdown isCategoriesOpen={isCategoriesOpen} />
+        {isMobile ? (
+          <>
+            <button
+              className="categories-dropdown"
+              onClick={() => setIsCategoriesOpen()}
+            >
+              <GiHamburgerMenu className="categories-dropdown--icon" />
+              קטגוריות
+            </button>
+
+            <CategoriesDropdown />
+          </>
+        ) : (
+          <CategoriesBar />
+        )}
       </section>
     </>
   );

@@ -8,16 +8,13 @@
   top: calc(100% + 10px);
   left: 5%;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-  opacity: 0;
   border-radius: 8px;
   background-color: #fff;
   transition: all 250ms ease-in-out;
 
-  &.active {
-    opacity: 1;
-  }
-
   &__item {
     padding: 0.15em;
+    display: block;
+    color: black;
   }
 }

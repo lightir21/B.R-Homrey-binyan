@@ -1,20 +1,38 @@
 import "./categoriesDropdown.scss";
 import categories from "../../extras/categories";
-const CategoriesDropdown = ({ isCategoriesOpen }) => {
+import { Link } from "react-router-dom";
+import { AnimatePresence, motion } from "framer-motion";
+import { useAppStore } from "../../store/app-store";
+
+const CategoriesDropdown = () => {
+  const { isCategoriesOpen, setIsCategoriesOpen } = useAppStore(
+    (state) => state
+  );
   return (
-    <ul
-      className={
-        isCategoriesOpen ? "categoriesDropdown active" : "categoriesDropdown"
-      }
-    >
-      {categories.map((cat) => {
-        return (
-          <li className="categoriesDropdown__item" key={cat.id}>
-            {cat.text}
-          </li>
-        );
-      })}
-    </ul>
+    <AnimatePresence>
+      {isCategoriesOpen && (
+        <motion.ul
+          key="modal"
+          className="categoriesDropdown"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.2 }}
+        >
+          {categories.map((cat) => (
+            <Link
+              key={cat.text}
+              to={`/category/${cat.text.replaceAll(" ", "-")}`}
+              className="categoriesDropdown__item"
+              onClick={setIsCategoriesOpen}
+            >
+              {cat.text}
+            </Link>
+          ))}
+        </motion.ul>
+      )}
+    </AnimatePresence>
   );
 };
+
 export default CategoriesDropdown;
