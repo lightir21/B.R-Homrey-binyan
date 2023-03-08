@@ -1,8 +1,10 @@
 import "./cartPage.scss";
 import { CartFigure } from "../../components";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
+import { useCartStore } from "../../store/cart-store";
 
 const CartPage = ({ showCart }) => {
+  const { items } = useCartStore();
   return (
     <>
       {showCart && (
@@ -15,17 +17,13 @@ const CartPage = ({ showCart }) => {
         >
           <h2>העגלה שלי</h2>
           <hr />
+
           <div className="cartPage__itemsList">
-            <CartFigure />
-            <CartFigure />
-            <CartFigure />
-            <CartFigure />
-            <CartFigure />
-            <CartFigure />
-            <CartFigure />
-            <CartFigure />
-            <CartFigure />
+            {items.map((item) => {
+              return <CartFigure item={item} />;
+            })}
           </div>
+
           <div className="cartPage__footer">
             <hr />
             <p>

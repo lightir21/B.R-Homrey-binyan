@@ -1,4 +1,5 @@
 import "./homePage.scss";
+import products from "../../assets/products";
 
 import { Header, OurServices, ProductFigure } from "../../components";
 const HomePage = () => {
@@ -17,10 +18,9 @@ const HomePage = () => {
         <h3 className="homePage__subTitles">מוצרים חמים</h3>
         <hr />
         <div className="homePage__hotProducts-container">
-          <ProductFigure />
-          <ProductFigure />
-          <ProductFigure />
-          <ProductFigure />
+          {products.map((product) => (
+            <ProductFigure key={product.id} product={product} />
+          ))}
         </div>
         <hr />
       </section>
