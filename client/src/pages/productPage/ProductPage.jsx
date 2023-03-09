@@ -46,9 +46,10 @@ const ProductPage = () => {
           </div>
           <button
             className="productPage__btn btn-green"
-            onClick={() =>
-              addItem({ productName, price, image, amount: amountState, id })
-            }
+            onClick={() => {
+              addItem({ productName, price, image, amount: amountState, id });
+              setAmountState(1);
+            }}
           >
             הוסף לעגלה
           </button>

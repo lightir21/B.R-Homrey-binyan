@@ -10,9 +10,17 @@ export const useCartStore = create(
         const items = get().items;
 
         const found = items.find((item) => item.id === product.id);
-        if (found) {
+        if (found && product.amount > 1) {
           const updatedItems = items.map((item) => {
-            if (item.productName === product.productName) {
+            if (item.id === product.id) {
+              item.amount = Number(item.amount) + Number(product.amount);
+            }
+            return item;
+          });
+          set({ items: updatedItems });
+        } else if (found) {
+          const updatedItems = items.map((item) => {
+            if (item.id === product.id) {
               item.amount++;
             }
             return item;
