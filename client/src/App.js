@@ -8,6 +8,7 @@ import {
   ProductPage,
   CategoryPage,
   OrderPage,
+  ContactUsPage,
 } from "./pages";
 import { useAppStore } from "./store/app-store";
 
@@ -27,6 +28,7 @@ function App() {
         <Route path="/product/:id" element={<ProductPage />} />
         <Route path="/category/:name" element={<CategoryPage />} />
         <Route path="/order" element={<OrderPage />} />
+        <Route path="/contactUs" element={<ContactUsPage />} />
       </Routes>
 
       <Footer />

@@ -1,0 +1,41 @@
+.contactUs {
+  text-align: center;
+  background-image: url("../../assets/nico-baum-jr0GS51wwyE-unsplash.webp");
+  background-size: cover;
+  padding: 2rem 1rem;
+
+  &__container {
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+    padding: 1rem 0.5rem;
+    border-radius: 8px;
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  input {
+  }
+
+  h1 {
+    margin: 0;
+    margin-bottom: 0.8rem;
+  }
+
+  input,
+  textarea {
+    width: 100%;
+    padding: 0.25em;
+    font-size: 1.25rem;
+    border: solid 1px var(--clr-green);
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    background-color: #ffffff54;
+    color: #fff;
+    &::placeholder {
+      color: #333;
+    }
+  }
+}

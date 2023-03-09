@@ -8,7 +8,7 @@ const Navbar = ({ setShowCart }) => {
       <div className="navbar__buttons">
         <Link to="/">ראשי</Link>
         <Link to="/about">אודות</Link>
-        <Link to="/contantUs">צרו קשר</Link>
+        <Link to="/contactUs">צרו קשר</Link>
       </div>
       <div className="navbar__cart">
         <div className="navbar__cart-num-box">
