@@ -2,8 +2,9 @@ import "./cartPage.scss";
 import { CartFigure } from "../../components";
 import { motion } from "framer-motion";
 import { useCartStore } from "../../store/cart-store";
+import { Link } from "react-router-dom";
 
-const CartPage = ({ showCart }) => {
+const CartPage = ({ showCart, setShowCart }) => {
   const { items } = useCartStore();
   return (
     <>
@@ -29,9 +30,13 @@ const CartPage = ({ showCart }) => {
             <p>
               סך הכל: <span>0₪</span>
             </p>
-            <button className="cartPage__footer-btn btn-green">
+            <Link
+              to="/order"
+              className="cartPage__footer-btn btn-green"
+              onClick={() => setShowCart(false)}
+            >
               שלח הזמנה
-            </button>
+            </Link>
           </div>
         </motion.div>
       )}
