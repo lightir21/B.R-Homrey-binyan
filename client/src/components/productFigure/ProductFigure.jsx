@@ -27,7 +27,7 @@ const ProductFigure = ({ product }) => {
         </Link>
         <button
           className="productFigure__btn btn-green"
-          onClick={() => addItem({ productName, price, image, amount })}
+          onClick={() => addItem({ productName, price, image, amount, id })}
         >
           הוסף לעגלה
         </button>

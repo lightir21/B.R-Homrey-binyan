@@ -12,7 +12,7 @@ const products = [
       "ריח מושלם!!!",
     ],
     image: "./sagproduct.jpg",
-    amount: 1,
+    amount: 0,
   },
   {
     id: 2,
@@ -27,7 +27,7 @@ const products = [
       "ריח מושלם!!!",
     ],
     image: "./sagproduct.jpg",
-    amount: 1,
+    amount: 0,
   },
 ];
 

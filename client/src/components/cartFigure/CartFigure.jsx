@@ -2,13 +2,23 @@ import "./cartFigure.scss";
 import products from "../../assets/products";
 import { AiOutlineClose } from "react-icons/ai";
 import sagProduct from "../../assets/sagproduct.jpg";
+import { useCartStore } from "../../store/cart-store";
+import { useEffect, useState } from "react";
 
-const CartFigure = () => {
-  const { id, productName, price, subHeading, advantagesList, image } =
-    products[0];
+const CartFigure = ({ item, index }) => {
+  const { id, productName, price, subHeading, advantagesList, image, amount } =
+    item;
+
+  const [amountState, setAmountState] = useState(amount);
+
+  const { updateItemAmount, deleteItem } = useCartStore();
+
+  useEffect(() => {
+    updateItemAmount(index, amountState);
+  }, [amountState]);
 
   return (
-    <div className="cartFigure">
+    <div className="cartFigure" key={id}>
       <div className="cartFigure__img-box">
         <img src={sagProduct} alt={productName} />
       </div>
@@ -19,11 +29,19 @@ const CartFigure = () => {
             מחיר: <span>{price}₪</span>
           </p>
           <p>
-            כמות: <input type="number" />
-          </p>{" "}
+            כמות:
+            <input
+              type="number"
+              value={amountState}
+              onChange={(e) => setAmountState(e.target.value)}
+            />
+          </p>
         </div>
       </div>
-      <AiOutlineClose className="cartFigure__delete" />
+      <AiOutlineClose
+        className="cartFigure__delete"
+        onClick={() => deleteItem(id)}
+      />
     </div>
   );
 };

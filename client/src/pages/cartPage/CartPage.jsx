@@ -19,8 +19,8 @@ const CartPage = ({ showCart }) => {
           <hr />
 
           <div className="cartPage__itemsList">
-            {items.map((item) => {
-              return <CartFigure item={item} />;
+            {items.map((item, index) => {
+              return <CartFigure key={item.id} item={item} index={index} />;
             })}
           </div>
 

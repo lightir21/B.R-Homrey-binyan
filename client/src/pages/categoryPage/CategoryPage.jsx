@@ -1,4 +1,5 @@
 import { useParams } from "react-router-dom";
+import products from "../../assets/products";
 import { Header, ProductFigure } from "../../components";
 import "./categoryPage.scss";
 const CategoryPage = () => {
@@ -15,24 +16,9 @@ const CategoryPage = () => {
           <option value="cheapToPricy">מיין מהיקר לזול</option>
         </select>
         <div className="categoryPage__itemsList">
-          <ProductFigure />
-          <ProductFigure />
-          <ProductFigure />
-          <ProductFigure />
-          <ProductFigure />
-          <ProductFigure />
-          <ProductFigure />
-          <ProductFigure />
-          <ProductFigure />
-          <ProductFigure />
-          <ProductFigure />
-          <ProductFigure />
-          <ProductFigure />
-          <ProductFigure />
-          <ProductFigure />
-          <ProductFigure />
-          <ProductFigure />
-          <ProductFigure />
+          {products.map((product) => {
+            return <ProductFigure product={product} />;
+          })}
         </div>
       </div>
     </div>
