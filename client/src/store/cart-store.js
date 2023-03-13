@@ -5,6 +5,7 @@ export const useCartStore = create(
   persist(
     (set, get) => ({
       items: [],
+      totalPrice: 0,
 
       addItem: (product) => {
         const items = get().items;
@@ -45,6 +46,10 @@ export const useCartStore = create(
         const items = get().items;
         const updatedItems = items.filter((item) => item.id !== productId);
         set({ items: updatedItems });
+      },
+
+      setTotalPrice: (payload) => {
+        set({ totalPrice: payload });
       },
     }),
     { name: "cartStore" }

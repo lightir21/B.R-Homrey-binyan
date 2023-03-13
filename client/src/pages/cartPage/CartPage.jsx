@@ -3,9 +3,11 @@ import { CartFigure } from "../../components";
 import { motion } from "framer-motion";
 import { useCartStore } from "../../store/cart-store";
 import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
 
 const CartPage = ({ showCart, setShowCart }) => {
-  const { items } = useCartStore();
+  const { items, totalPrice } = useCartStore();
+
   return (
     <>
       {showCart && (
@@ -28,7 +30,8 @@ const CartPage = ({ showCart, setShowCart }) => {
           <div className="cartPage__footer">
             <hr />
             <p>
-              סך הכל: <span>0₪</span>
+              סך הכל:{" "}
+              <span>{items.length > 0 ? totalPrice.toFixed(2) : 0}₪</span>
             </p>
             <Link
               to="/order"

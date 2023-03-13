@@ -11,11 +11,18 @@ const CartFigure = ({ item, index }) => {
 
   const [amountState, setAmountState] = useState(amount);
 
-  const { updateItemAmount, deleteItem } = useCartStore();
+  const { updateItemAmount, deleteItem, setTotalPrice, items } = useCartStore();
 
   useEffect(() => {
     updateItemAmount(index, amountState);
-  }, [amountState]);
+
+    const price = items.reduce((acc, curr) => {
+      const multi = curr.price * curr.amount;
+      return acc + multi;
+    }, 0);
+
+    setTotalPrice(price);
+  }, [amountState, items]);
 
   return (
     <div className="cartFigure" key={id}>
