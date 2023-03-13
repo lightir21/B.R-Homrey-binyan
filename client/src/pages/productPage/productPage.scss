@@ -1,6 +1,13 @@
+@import "../../variables.scss";
+
 .productPage {
   margin: 0.2rem;
   font-size: 1.25rem;
+
+  @media only screen and (min-width: $smallScreen) {
+    max-width: 1800px;
+    margin: 0 auto;
+  }
 
   &__container {
     display: flex;

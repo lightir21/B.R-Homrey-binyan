@@ -7,14 +7,14 @@ const HomePage = () => {
     <div className="homePage">
       {/* Header Section */}
       <Header />
-      <section className="homePage__hero">
+      <section className="homePage__hero container">
         <h1>
           שירות ואמינות
           <br /> זאת הדרך שלנו
         </h1>
       </section>
 
-      <section className="homePage__hotProducts">
+      <section className="homePage__hotProducts container">
         <h3 className="homePage__subTitles">מוצרים חמים</h3>
         <hr />
         <div className="homePage__hotProducts-container">
@@ -25,7 +25,7 @@ const HomePage = () => {
         <hr />
       </section>
 
-      <section className="homePage__services">
+      <section className="homePage__services container">
         <h3 className="homePage__subTitles">השירותים שלנו</h3>
         <OurServices />
       </section>

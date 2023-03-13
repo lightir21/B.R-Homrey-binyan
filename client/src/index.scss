@@ -9,9 +9,6 @@
   --clr-green: #48ac25;
 }
 
-// Screen sizes
-$pcScreen: 767px;
-
 ul,
 p {
   padding: 0;
@@ -21,6 +18,10 @@ p {
 a,
 a:visited {
   text-decoration: none;
+}
+
+hr {
+  max-width: 1800px;
 }
 
 img {
@@ -37,4 +38,9 @@ img {
     background-color: #48ac25;
     border: none;
   }
+}
+
+.container {
+  max-width: 1800px;
+  margin: 0 auto;
 }

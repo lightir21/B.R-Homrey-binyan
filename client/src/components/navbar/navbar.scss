@@ -1,10 +1,12 @@
+@import "../../variables.scss";
+
 .navbar {
   background-color: black;
   color: #fff;
   margin: 0 auto;
   padding: 0.5em;
   display: flex;
-  max-width: 1200px;
+  max-width: 1800px;
   position: sticky;
   z-index: 9999999;
   top: 0;
@@ -18,6 +20,11 @@
       text-decoration: none;
       font-size: 1.3rem;
       padding: 0 0.8em;
+      display: inline-block;
+
+      @media only screen and (min-width: $mediumScreen) {
+        font-size: 1.4rem;
+      }
     }
 
     a + a {

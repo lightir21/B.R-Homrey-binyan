@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
-    <div className="footer">
+    <div className="footer container">
       {categories.map((cat) => {
         return (
           <div key={cat.id}>

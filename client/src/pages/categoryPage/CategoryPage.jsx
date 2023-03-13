@@ -6,8 +6,9 @@ const CategoryPage = () => {
   const { name } = useParams();
 
   return (
-    <div className="categoryPage">
+    <div className="categoryPage container">
       <Header />
+      <hr />
       <div className="categoryPage__container">
         <h1>{name.replaceAll("-", " ")}</h1>
         <select name="sortOptions" id="sortOptions">

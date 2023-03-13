@@ -1,0 +1,18 @@
+@import "../../variables.scss";
+
+.categoriesBar {
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-around;
+
+  &__item {
+    padding: 0.5em 0;
+    display: block;
+    color: black;
+    font-weight: 600;
+    font-size: 0.9rem;
+    @media only screen and (min-width: $mediumScreen) {
+      font-size: 1.2rem;
+    }
+  }
+}

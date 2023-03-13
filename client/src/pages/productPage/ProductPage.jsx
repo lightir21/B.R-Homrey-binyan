@@ -14,8 +14,9 @@ const ProductPage = () => {
   const { addItem } = useCartStore();
 
   return (
-    <div className="productPage">
+    <div className="productPage container">
       <Header />
+      <hr />
       <h1 className="productPage__heading">{productName}</h1>
       <div className="productPage__container">
         {/* description */}

@@ -1,11 +1,28 @@
+@import "../../variables.scss";
+
 .header {
   display: flex;
   flex-direction: column-reverse;
   align-items: center;
   margin-bottom: 2rem;
 
+  @media only screen and (min-width: $smallScreen) {
+    flex-direction: row;
+    font-size: 1rem;
+    justify-content: space-around;
+    margin: 2rem auto;
+  }
+
+  @media only screen and (min-width: $mediumScreen) {
+    font-size: 1.2rem;
+  }
+
   &-companyInfo {
     display: none;
+
+    @media only screen and (min-width: $smallScreen) {
+      display: inline-block;
+    }
   }
 
   &-search {
@@ -14,12 +31,27 @@
     border-radius: 8px;
     font-size: 1.5rem;
     padding: 0.1em 1em;
+    @media only screen and (min-width: $smallScreen) {
+      max-width: 280px;
+    }
+
+    @media only screen and (min-width: $mediumScreen) {
+      font-size: 1.6rem;
+    }
   }
 
   &-logo {
     font-size: 2.5rem;
     padding: 0.2em;
     color: #000;
+
+    @media only screen and (min-width: $smallScreen) {
+      font-size: 2rem;
+    }
+
+    @media only screen and (min-width: $mediumScreen) {
+      font-size: 2.8rem;
+    }
 
     &-icon {
       color: var(--clr-green);

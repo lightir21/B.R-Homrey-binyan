@@ -1,3 +1,5 @@
+@import "../../variables.scss";
+
 .homePage {
   margin: 0.2rem;
 
@@ -10,6 +12,14 @@
       url("../../assets/hero-img.jpg");
     background-size: cover;
     background-position: center;
+
+    @media only screen and (min-width: $smallScreen) {
+      padding: 15%;
+      font-size: 1.6rem;
+    }
+    @media only screen and (min-width: $mediumScreen) {
+      font-size: 2rem;
+    }
   }
 
   &__hotProducts {
@@ -18,14 +28,22 @@
     &-container {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
+
+      @media only screen and (min-width: $smallScreen) {
+        grid-template-columns: repeat(4, 1fr);
+      }
     }
   }
 
   &__subTitles {
     font-size: 1.6rem;
+    @media only screen and (min-width: $smallScreen) {
+      font-size: 2.4rem;
+    }
   }
 
   &__services {
     text-align: center;
+    margin-bottom: 1.5rem;
   }
 }

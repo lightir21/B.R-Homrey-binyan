@@ -15,7 +15,7 @@ const Header = () => {
 
   return (
     <>
-      <header className="header">
+      <header className="header container">
         <div className="header-companyInfo">
           <p>סניף צומת גלעם: 04-8435172</p>
           <p>סניף ביאליק 3, ק.אתא: 04-6391913</p>

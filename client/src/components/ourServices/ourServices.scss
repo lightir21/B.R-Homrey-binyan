@@ -1,5 +1,14 @@
+@import "../../variables.scss";
+
 .ourServices {
   font-size: 1.4rem;
+
+  @media only screen and (min-width: $smallScreen) {
+    font-size: 1.8rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
 
   p {
     margin-top: -0.3em;
@@ -12,5 +21,10 @@
   &__box + &__box {
     margin-top: 1rem;
     border-top: 1px solid var(--clr-green);
+
+    @media only screen and (min-width: $smallScreen) {
+      margin-top: 0;
+      border-top: none;
+    }
   }
 }
