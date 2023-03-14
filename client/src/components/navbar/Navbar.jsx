@@ -10,12 +10,15 @@ const Navbar = ({ setShowCart }) => {
         <Link to="/about">אודות</Link>
         <Link to="/contactUs">צרו קשר</Link>
       </div>
-      <div className="navbar__cart">
+      <div
+        className="navbar__cart"
+        onClick={() => setShowCart((prev) => !prev)}
+      >
         <div className="navbar__cart-num-box">
           <span>0</span>
         </div>
         <span className="navbar__cart-text">עגלת קניות</span>
-        <AiOutlineShoppingCart onClick={() => setShowCart((prev) => !prev)} />
+        <AiOutlineShoppingCart />
       </div>
     </nav>
   );

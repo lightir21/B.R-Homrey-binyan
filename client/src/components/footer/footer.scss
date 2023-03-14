@@ -1,3 +1,5 @@
+@import "../../variables.scss";
+
 .footer {
   background-color: #000;
   color: #fff;
@@ -5,6 +7,10 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   font-size: 1.25rem;
+
+  @media only screen and (min-width: $smallScreen) {
+    grid-template-columns: repeat(2, minmax(300px, 350px));
+  }
 
   &__header {
     display: inline-block;

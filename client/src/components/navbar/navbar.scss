@@ -6,14 +6,23 @@
   margin: 0 auto;
   padding: 0.5em;
   display: flex;
+
   max-width: 1800px;
   position: sticky;
   z-index: 9999999;
   top: 0;
 
+  @media only screen and (min-width: $mediumScreen) {
+    padding: 0.8em;
+  }
+
   &__buttons {
     margin: 0 auto;
     display: flex;
+
+    @media only screen and (min-width: $mediumScreen) {
+      padding-right: 120px;
+    }
 
     a {
       color: #fff;
@@ -23,7 +32,7 @@
       display: inline-block;
 
       @media only screen and (min-width: $mediumScreen) {
-        font-size: 1.4rem;
+        font-size: 1.5rem;
       }
     }
 
@@ -35,13 +44,36 @@
   &__cart {
     display: flex;
     font-size: 1.6rem;
+    position: relative;
+    align-items: center;
+    cursor: pointer;
+    @media only screen and (min-width: $mediumScreen) {
+      font-size: 1.4rem;
+      gap: 0.5rem;
+    }
 
     &-num-box {
       display: none;
+      background-color: #fff;
+      color: #000;
+      font-size: 1rem;
+
+      @media only screen and (min-width: $mediumScreen) {
+        display: inline-block;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 70%;
+        padding: 0 0.2em;
+      }
     }
 
     &-text {
       display: none;
+
+      @media only screen and (min-width: $mediumScreen) {
+        display: inline-block;
+      }
     }
   }
 }

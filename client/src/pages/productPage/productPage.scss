@@ -7,11 +7,26 @@
   @media only screen and (min-width: $smallScreen) {
     max-width: 1800px;
     margin: 0 auto;
+    margin-bottom: 2rem;
   }
 
   &__container {
     display: flex;
     flex-direction: column-reverse;
+
+    @media only screen and (min-width: $smallScreen) {
+      flex-direction: row;
+    }
+
+    @media only screen and (min-width: $mediumScreen) {
+      gap: 15rem;
+    }
+  }
+
+  &__description {
+    @media only screen and (min-width: $smallScreen) {
+      padding-right: 3rem;
+    }
   }
 
   &__heading,
@@ -72,5 +87,19 @@
   &__btn {
     width: 100%;
     padding: 0.5em 0;
+    border-radius: 8px;
+
+    @media only screen and (min-width: $mediumScreen) {
+      width: 50%;
+    }
+  }
+
+  &__image {
+    @media only screen and (min-width: $smallScreen) {
+      max-width: 500px;
+    }
+    @media only screen and (min-width: $mediumScreen) {
+      width: 50%;
+    }
   }
 }

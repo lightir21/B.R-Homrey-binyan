@@ -1,19 +1,41 @@
+@import "../../variables.scss";
+
 .contactUs {
   text-align: center;
+  background-color: #ebebeb;
 
-  background-size: cover;
-  padding: 2rem 1rem;
+  padding: 4rem 1rem;
+
+  @media only screen and (min-width: $smallScreen) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 7.5rem 0;
+  }
 
   &__container {
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
     padding: 1rem 0.5rem;
     border-radius: 8px;
+
+    background-size: cover;
+
+    @media only screen and (min-width: $smallScreen) {
+      width: 65%;
+      max-width: 600px;
+      padding: 2rem 0.5rem;
+    }
   }
 
   &__form {
     display: flex;
     flex-direction: column;
     gap: 1rem;
+
+    @media only screen and (min-width: $smallScreen) {
+      margin: 0 auto;
+      width: 60%;
+    }
   }
 
   input {

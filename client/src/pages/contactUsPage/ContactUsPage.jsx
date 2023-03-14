@@ -3,8 +3,11 @@ import image from "../../assets/nico-baum-jr0GS51wwyE-unsplash.webp";
 
 const ContactUsPage = () => {
   return (
-    <div className="contactUs" style={{ backgroundImage: `url(${image})` }}>
-      <div className="contactUs__container">
+    <div className="contactUs container">
+      <div
+        className="contactUs__container"
+        style={{ backgroundImage: `url(${image})` }}
+      >
         <h1>צרו איתנו קשר</h1>
         <form className="contactUs__form">
           <input type="text" placeholder="שם מלא" />
