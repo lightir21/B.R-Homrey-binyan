@@ -1,3 +1,5 @@
+@import "../../variables.scss";
+
 .cartFigure {
   display: flex;
   align-items: center;
@@ -23,6 +25,10 @@
     input {
       aspect-ratio: 1/1;
       width: 2rem;
+
+      @media only screen and (min-width: $smallScreen) {
+        width: 3rem;
+      }
     }
 
     &-priceBox {

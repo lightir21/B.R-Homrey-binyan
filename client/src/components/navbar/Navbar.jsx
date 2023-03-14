@@ -1,8 +1,11 @@
 import "./navbar.scss";
 import { Link } from "react-router-dom";
 import { AiOutlineShoppingCart } from "react-icons/ai";
+import { useCartStore } from "../../store/cart-store";
 
 const Navbar = ({ setShowCart }) => {
+  const { items } = useCartStore();
+
   return (
     <nav className="navbar">
       <div className="navbar__buttons">
@@ -15,7 +18,7 @@ const Navbar = ({ setShowCart }) => {
         onClick={() => setShowCart((prev) => !prev)}
       >
         <div className="navbar__cart-num-box">
-          <span>0</span>
+          <span>{items.length}</span>
         </div>
         <span className="navbar__cart-text">עגלת קניות</span>
         <AiOutlineShoppingCart />

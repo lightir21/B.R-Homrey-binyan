@@ -17,6 +17,9 @@
   @media only screen and (min-width: $smallScreen) {
     width: 40%;
   }
+  @media only screen and (min-width: $mediumScreen) {
+    width: 30%;
+  }
 
   & h2 {
     text-align: center;
