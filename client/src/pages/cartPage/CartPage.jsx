@@ -37,6 +37,7 @@ const CartPage = ({ showCart, setShowCart }) => {
               to="/order"
               className="cartPage__footer-btn btn-green"
               onClick={() => setShowCart(false)}
+              style={items.length === 0 && { pointerEvents: "none" }}
             >
               שלח הזמנה
             </Link>

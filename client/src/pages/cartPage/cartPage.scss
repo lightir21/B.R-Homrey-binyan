@@ -31,6 +31,8 @@
   &__itemsList {
     max-height: calc(100vh - 280px);
     overflow-y: scroll;
+    -ms-flex-positive: 1;
+    -webkit-flex-grow: 1;
     flex-grow: 1;
 
     & > * {
