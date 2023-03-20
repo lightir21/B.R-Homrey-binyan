@@ -4,13 +4,15 @@
   background-color: black;
   color: #fff;
   margin: 0 auto;
-  padding: 0.5em;
-  display: flex;
 
-  max-width: 1800px;
   position: sticky;
   z-index: 9999999;
   top: 0;
+
+  &__container {
+    padding: 0.25em;
+    display: flex;
+  }
 
   @media only screen and (min-width: $mediumScreen) {
     padding: 0.8em;

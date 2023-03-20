@@ -1,6 +1,7 @@
 import { AnimatePresence } from "framer-motion";
 import { useState } from "react";
 import { Route, Routes } from "react-router-dom";
+import UploadProducts from "./uploadProducts/UploadProducts";
 import { Footer, Navbar } from "./components";
 import {
   CartPage,
@@ -29,6 +30,7 @@ function App() {
         <Route path="/category/:name" element={<CategoryPage />} />
         <Route path="/order" element={<OrderPage />} />
         <Route path="/contactUs" element={<ContactUsPage />} />
+        <Route path="/uploadProducts" element={<UploadProducts />} />
       </Routes>
 
       <Footer />

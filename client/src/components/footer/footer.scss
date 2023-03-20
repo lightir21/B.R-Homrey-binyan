@@ -3,10 +3,14 @@
 .footer {
   background-color: #000;
   color: #fff;
-  padding: 1em;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
+
   font-size: 1.25rem;
+
+  &__container {
+    padding: 1em;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
 
   @media only screen and (min-width: $smallScreen) {
     grid-template-columns: repeat(2, minmax(300px, 350px));

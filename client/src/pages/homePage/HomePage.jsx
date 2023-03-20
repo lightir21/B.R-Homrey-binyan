@@ -7,7 +7,7 @@ const HomePage = () => {
     <div className="homePage">
       {/* Header Section */}
       <Header />
-      <section className="homePage__hero container">
+      <section className="homePage__hero">
         <h1>
           שירות ואמינות
           <br /> זאת הדרך שלנו

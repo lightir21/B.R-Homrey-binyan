@@ -13,6 +13,7 @@ const products = [
     ],
     image: "./sagproduct.jpg",
     amount: 0,
+    hotProduct: false,
   },
   {
     id: 2,
@@ -28,6 +29,7 @@ const products = [
     ],
     image: "./sagproduct.jpg",
     amount: 0,
+    hotProduct: false,
   },
 ];
 

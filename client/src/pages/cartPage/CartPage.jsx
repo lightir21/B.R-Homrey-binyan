@@ -3,7 +3,6 @@ import { CartFigure } from "../../components";
 import { motion } from "framer-motion";
 import { useCartStore } from "../../store/cart-store";
 import { Link } from "react-router-dom";
-import { useEffect, useState } from "react";
 
 const CartPage = ({ showCart, setShowCart }) => {
   const { items, totalPrice } = useCartStore();

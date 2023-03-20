@@ -35,6 +35,12 @@ const ProductSchema = new mongoose.Schema({
   advantagesList: {
     type: [String],
   },
+  image: {
+    type: String,
+  },
+  hotProducts: {
+    type: Boolean,
+  },
 });
 
 export default mongoose.model("Product", ProductSchema);
