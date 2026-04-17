@@ -31,3 +31,33 @@
     margin-top: 0.75rem;
   }
 }
+
+.productFigure {
+  &__imagePlaceholder {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    background: #f0f0f0;
+    border-radius: 6px;
+  }
+
+  &__colors {
+    display: flex;
+    gap: 0.3rem;
+    align-items: center;
+    margin: 0.3rem 0;
+    flex-wrap: wrap;
+  }
+
+  &__colorDot {
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    border: 1px solid #ccc;
+    display: inline-block;
+  }
+
+  &__colorMore {
+    font-size: 0.75rem;
+    color: #888;
+  }
+}

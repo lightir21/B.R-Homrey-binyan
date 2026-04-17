@@ -1,11 +1,28 @@
 import "./homePage.scss";
-import products from "../../assets/products";
-
+import { useEffect, useState } from "react";
 import { Header, OurServices, ProductFigure } from "../../components";
+import { axiosInstance } from "../../utils/axios";
+
 const HomePage = () => {
+  const [hotProducts, setHotProducts] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchHot = async () => {
+      try {
+        const { data } = await axiosInstance.get("/product?hotProducts=true");
+        setHotProducts(data.products);
+      } catch (err) {
+        console.error("Failed to load hot products", err);
+      } finally {
+        setLoading(false);
+      }
+    };
+    fetchHot();
+  }, []);
+
   return (
     <div className="homePage">
-      {/* Header Section */}
       <Header />
       <section className="homePage__hero">
         <h1>
@@ -18,9 +35,15 @@ const HomePage = () => {
         <h3 className="homePage__subTitles">מוצרים חמים</h3>
         <hr />
         <div className="homePage__hotProducts-container">
-          {products.map((product) => (
-            <ProductFigure key={product.id} product={product} />
-          ))}
+          {loading ? (
+            <p className="homePage__loading">טוען מוצרים...</p>
+          ) : hotProducts.length > 0 ? (
+            hotProducts.map((product) => (
+              <ProductFigure key={product._id} product={product} />
+            ))
+          ) : (
+            <p className="homePage__empty">אין מוצרים חמים כרגע</p>
+          )}
         </div>
         <hr />
       </section>
@@ -32,4 +55,5 @@ const HomePage = () => {
     </div>
   );
 };
+
 export default HomePage;

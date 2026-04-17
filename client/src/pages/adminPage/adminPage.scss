@@ -1,0 +1,285 @@
+@import "../../variables.scss";
+
+// ─── Login ────────────────────────────────────────────────────────────────────
+.adminLogin {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f5f6fa;
+
+  &__card {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 24px rgba(0,0,0,.1);
+    padding: 2.5rem 3rem;
+    width: 100%;
+    max-width: 380px;
+    text-align: center;
+    direction: rtl;
+  }
+  &__title { margin-bottom: .25rem; color: #333; }
+  &__subtitle { color: #888; font-size: .9rem; margin-bottom: 1.5rem; }
+  &__error {
+    background: #fdecea; color: #c0392b; border-radius: 6px;
+    padding: .5rem 1rem; font-size: .9rem; margin-bottom: 1rem;
+  }
+  &__form { display: flex; flex-direction: column; gap: 1rem; }
+  &__input {
+    padding: .75rem 1rem; border: 1px solid #ddd; border-radius: 8px;
+    font-size: 1rem; text-align: center; transition: border-color .2s;
+    &:focus { outline: none; border-color: var(--clr-green); }
+  }
+  &__btn {
+    padding: .75rem; border-radius: 8px; font-size: 1rem; cursor: pointer;
+    &:disabled { opacity: .6; cursor: not-allowed; }
+  }
+}
+
+// ─── Panel shell ─────────────────────────────────────────────────────────────
+.adminPanel {
+  direction: rtl;
+  min-height: 100vh;
+  background: #f5f6fa;
+
+  &__header {
+    background: #fff;
+    border-bottom: 1px solid #e8e8e8;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    h2 { margin: 0; color: #2c3e50; font-size: 1.3rem; }
+  }
+  &__logout {
+    padding: .4rem 1.2rem; background: #e74c3c; color: #fff;
+    border: none; border-radius: 6px; cursor: pointer; font-size: .9rem;
+    &:hover { background: #c0392b; }
+  }
+
+  // Tabs
+  &__tabs {
+    display: flex;
+    background: #fff;
+    border-bottom: 2px solid #eee;
+    padding: 0 2rem;
+  }
+  &__tab {
+    padding: .85rem 1.5rem; border: none; background: none;
+    cursor: pointer; font-size: 1rem; color: #777; border-bottom: 3px solid transparent;
+    margin-bottom: -2px; transition: color .2s, border-color .2s;
+    &:hover { color: #333; }
+    &--active { color: var(--clr-green); border-bottom-color: var(--clr-green); font-weight: 600; }
+  }
+
+  &__body {
+    max-width: 820px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+  }
+
+  // Status bar
+  &__status {
+    border-radius: 8px; padding: .75rem 1rem; font-size: .95rem; margin-bottom: 1.25rem;
+    &--success { background: #eafaf1; color: #27ae60; border: 1px solid #a9dfbf; }
+    &--error   { background: #fdecea; color: #c0392b; border: 1px solid #f5b7b1; }
+    &--info    { background: #eaf3fb; color: #2980b9; border: 1px solid #aed6f1; }
+  }
+
+  // ─── Form ────────────────────────────────────────────────────────────────
+  &__form {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 12px rgba(0,0,0,.07);
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+  &__sectionTitle {
+    margin: 0 0 -.5rem; color: #555; font-size: 1rem;
+    border-bottom: 1px solid #eee; padding-bottom: .5rem;
+  }
+  &__row {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;
+    @media (max-width: $smallScreen) { grid-template-columns: 1fr; }
+  }
+  &__field {
+    display: flex; flex-direction: column; gap: .4rem;
+    label { font-weight: 600; font-size: .9rem; color: #444; }
+    input[type="text"], input[type="number"], input[type="url"],
+    select, textarea {
+      padding: .6rem .8rem; border: 1px solid #ddd; border-radius: 8px;
+      font-size: .95rem; font-family: inherit; background: #fafafa;
+      transition: border-color .2s;
+      &:focus { outline: none; border-color: var(--clr-green); background: #fff; }
+    }
+    textarea { resize: vertical; }
+    small { color: #999; font-size: .8rem; }
+    &--inline { flex-direction: row; align-items: center; gap: 1rem;
+      label { white-space: nowrap; }
+      select { width: auto; }
+    }
+  }
+  &__formActions {
+    display: flex; gap: .75rem; justify-content: flex-end; margin-top: .5rem;
+  }
+  &__cancelBtn {
+    padding: .7rem 1.5rem; border: 1px solid #ccc; border-radius: 8px;
+    background: #fff; cursor: pointer; font-size: 1rem;
+    &:hover { background: #f5f5f5; }
+  }
+  &__submit {
+    padding: .75rem 2rem; border-radius: 8px; font-size: 1rem; cursor: pointer;
+    &:disabled { opacity: .6; cursor: not-allowed; }
+  }
+
+  // ─── Image upload drop zone ───────────────────────────────────────────────
+  &__dropZone {
+    border: 2px dashed #ccc; border-radius: 10px; padding: 1.5rem;
+    text-align: center; cursor: pointer; transition: border-color .2s, background .2s;
+    min-height: 140px; display: flex; align-items: center; justify-content: center;
+    &:hover, &--over { border-color: var(--clr-green); background: #f0fae9; }
+    &--loading { pointer-events: none; opacity: .7; }
+    &-placeholder {
+      display: flex; flex-direction: column; align-items: center; gap: .4rem;
+      color: #aaa;
+      p { margin: 0; font-size: .95rem; }
+      small { font-size: .8rem; }
+    }
+    &-icon { font-size: 2rem; }
+    &-preview {
+      max-height: 180px; max-width: 100%; border-radius: 8px; object-fit: contain;
+    }
+    &-spinner {
+      width: 2rem; height: 2rem; border: 3px solid #ddd;
+      border-top-color: var(--clr-green); border-radius: 50%;
+      animation: spin .7s linear infinite;
+    }
+  }
+  &__imageActions {
+    display: flex; gap: .5rem; align-items: center; margin-top: .5rem;
+  }
+  &__imageUrl {
+    flex: 1; padding: .5rem .75rem; border: 1px solid #ddd; border-radius: 8px;
+    font-size: .85rem; background: #fafafa;
+    &:focus { outline: none; border-color: var(--clr-green); }
+  }
+  &__clearImage {
+    padding: .4rem .8rem; border: 1px solid #ddd; border-radius: 6px;
+    background: #fff; cursor: pointer; font-size: .85rem; white-space: nowrap;
+    &:hover { background: #fdecea; border-color: #e74c3c; color: #e74c3c; }
+  }
+  &__uploadError { color: #e74c3c; font-size: .85rem; }
+
+  // ─── Colors ──────────────────────────────────────────────────────────────
+  &__colorPicker { display: flex; gap: .5rem; align-items: center; flex-wrap: wrap; }
+  &__colorWheel {
+    width: 2.8rem; height: 2.8rem; border: none; border-radius: 6px;
+    cursor: pointer; padding: 2px; background: none; flex-shrink: 0;
+  }
+  &__colorText { flex: 1; min-width: 100px; }
+  &__colorAdd {
+    padding: .5rem 1rem; border-radius: 8px; cursor: pointer;
+    font-size: .9rem; white-space: nowrap;
+  }
+  &__colorList { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: .75rem; }
+  &__colorChip {
+    display: flex; align-items: center; gap: .35rem;
+    background: #f0f0f0; border-radius: 20px; padding: .25rem .6rem .25rem .4rem;
+    font-size: .85rem;
+    &-dot {
+      width: 1.1rem; height: 1.1rem; border-radius: 50%;
+      border: 1px solid rgba(0,0,0,.15); flex-shrink: 0;
+    }
+    &-name { color: #444; }
+    &-remove {
+      background: none; border: none; cursor: pointer; color: #999;
+      font-size: 1.1rem; line-height: 1; padding: 0 .1rem;
+      &:hover { color: #e74c3c; }
+    }
+  }
+
+  // ─── Search & Edit ────────────────────────────────────────────────────────
+  &__editSection { display: flex; flex-direction: column; gap: 1.25rem; }
+  &__searchForm { display: flex; gap: .75rem; }
+  &__searchInput {
+    flex: 1; padding: .65rem 1rem; border: 1px solid #ddd; border-radius: 8px;
+    font-size: 1rem; font-family: inherit; background: #fff;
+    &:focus { outline: none; border-color: var(--clr-green); }
+  }
+  &__searchBtn {
+    padding: .65rem 1.5rem; border-radius: 8px; font-size: 1rem;
+    cursor: pointer; white-space: nowrap;
+    &:disabled { opacity: .6; cursor: not-allowed; }
+  }
+
+  &__results { display: flex; flex-direction: column; gap: .75rem; }
+  &__resultCard {
+    background: #fff; border-radius: 10px; box-shadow: 0 1px 6px rgba(0,0,0,.07);
+    padding: 1rem; display: flex; gap: 1rem; align-items: center;
+    transition: box-shadow .2s;
+    &:hover { box-shadow: 0 3px 12px rgba(0,0,0,.1); }
+    &-img {
+      width: 72px; height: 72px; flex-shrink: 0; border-radius: 8px; overflow: hidden;
+      border: 1px solid #eee;
+      img { width: 100%; height: 100%; object-fit: cover; }
+    }
+    &-noImg {
+      width: 72px; height: 72px; background: #f5f5f5; display: flex;
+      align-items: center; justify-content: center; font-size: 1.8rem;
+      border-radius: 8px;
+    }
+    &-info { flex: 1; display: flex; flex-direction: column; gap: .2rem; }
+    &-name { font-weight: 600; color: #2c3e50; font-size: 1rem; }
+    &-sku { font-size: .85rem; color: #888; }
+    &-meta { font-size: .85rem; color: #aaa; }
+    &-colors { display: flex; gap: .3rem; margin-top: .2rem; }
+    &-colorDot {
+      width: .9rem; height: .9rem; border-radius: 50%; border: 1px solid #ccc; display: inline-block;
+    }
+    &-actions {
+      display: flex; flex-direction: column; gap: .4rem; align-items: flex-end; flex-shrink: 0;
+    }
+  }
+
+  &__editBtn {
+    padding: .4rem 1rem; background: #3498db; color: #fff; border: none;
+    border-radius: 6px; cursor: pointer; font-size: .9rem;
+    &:hover { background: #2980b9; }
+  }
+  &__deleteBtn {
+    padding: .4rem 1rem; background: #fff; color: #e74c3c;
+    border: 1px solid #e74c3c; border-radius: 6px; cursor: pointer; font-size: .9rem;
+    &:hover { background: #fdecea; }
+  }
+  &__deleteConfirm {
+    display: flex; align-items: center; gap: .4rem; font-size: .85rem;
+    span { color: #e74c3c; font-weight: 600; }
+  }
+  &__deleteYes {
+    padding: .3rem .6rem; background: #e74c3c; color: #fff;
+    border: none; border-radius: 4px; cursor: pointer;
+  }
+  &__deleteNo {
+    padding: .3rem .6rem; background: #eee;
+    border: none; border-radius: 4px; cursor: pointer;
+  }
+
+  &__editHeader {
+    background: #fff; border-radius: 10px; padding: 1rem 1.25rem;
+    margin-bottom: 1rem; display: flex; align-items: center;
+    justify-content: space-between; box-shadow: 0 1px 6px rgba(0,0,0,.06);
+    h3 { margin: 0; font-size: 1rem; color: #444;
+      span { color: #2c3e50; font-size: 1.1rem; }
+    }
+  }
+  &__editSku {
+    font-size: .9rem; color: #888; background: #f0f0f0;
+    padding: .25rem .75rem; border-radius: 20px;
+  }
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}

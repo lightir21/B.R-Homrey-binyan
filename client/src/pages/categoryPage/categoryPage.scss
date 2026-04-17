@@ -32,3 +32,12 @@
     }
   }
 }
+
+.categoryPage {
+  &__status {
+    text-align: center;
+    color: #888;
+    padding: 2rem;
+    grid-column: 1 / -1;
+  }
+}

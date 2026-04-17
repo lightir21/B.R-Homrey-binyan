@@ -2,7 +2,7 @@
   "name": "b-r-holmrey-binyain",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "server.js",
   "type": "module",
   "scripts": {
     "server": "nodemon server.js --ignore ../client",
@@ -15,9 +15,11 @@
     "cors": "^2.8.5",
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
-    "framer-motion": "^10.0.1",
+    "express-async-errors": "^3.1.1",
     "http-status-codes": "^2.2.0",
-    "mongoose": "^7.0.0"
+    "jsonwebtoken": "^9.0.0",
+    "mongoose": "^7.0.0",
+    "nodemailer": "^6.9.7"
   },
   "devDependencies": {
     "concurrently": "^7.6.0",

@@ -1,36 +1,40 @@
 import "./cartFigure.scss";
-import products from "../../assets/products";
 import { AiOutlineClose } from "react-icons/ai";
-import sagProduct from "../../assets/sagproduct.jpg";
 import { useCartStore } from "../../store/cart-store";
 import { useEffect, useState } from "react";
 
 const CartFigure = ({ item, index }) => {
-  const { id, productName, price, subHeading, advantagesList, image, amount } =
-    item;
-
+  const { id, productName, price, image, amount, selectedColor } = item;
   const [amountState, setAmountState] = useState(amount);
-
   const { updateItemAmount, deleteItem, setTotalPrice, items } = useCartStore();
 
   useEffect(() => {
+    if (amountState < 1) return;
     updateItemAmount(index, amountState);
-
-    const price = items.reduce((acc, curr) => {
-      const multi = curr.price * curr.amount;
-      return acc + multi;
-    }, 0);
-
-    setTotalPrice(price);
-  }, [amountState, items]);
+    const total = items.reduce((acc, curr) => acc + curr.price * curr.amount, 0);
+    setTotalPrice(total);
+  }, [amountState]);
 
   return (
-    <div className="cartFigure" key={id}>
+    <div className="cartFigure" key={`${id}-${selectedColor}`}>
       <div className="cartFigure__img-box">
-        <img src={sagProduct} alt={productName} />
+        {image ? (
+          <img src={image} alt={productName} />
+        ) : (
+          <div className="cartFigure__img-placeholder" />
+        )}
       </div>
       <div className="cartFigure__details">
         <h3>{productName}</h3>
+        {selectedColor && (
+          <div className="cartFigure__color">
+            <span
+              className="cartFigure__color-dot"
+              style={{ backgroundColor: selectedColor }}
+            />
+            <span>{selectedColor}</span>
+          </div>
+        )}
         <div className="cartFigure__details-priceBox">
           <p className="cartFigure__details-price">
             מחיר: <span>{price}₪</span>
@@ -39,17 +43,19 @@ const CartFigure = ({ item, index }) => {
             כמות:
             <input
               type="number"
+              min="1"
               value={amountState}
-              onChange={(e) => setAmountState(e.target.value)}
+              onChange={(e) => setAmountState(Math.max(1, Number(e.target.value)))}
             />
           </p>
         </div>
       </div>
       <AiOutlineClose
         className="cartFigure__delete"
-        onClick={() => deleteItem(id)}
+        onClick={() => deleteItem(id, selectedColor)}
       />
     </div>
   );
 };
+
 export default CartFigure;

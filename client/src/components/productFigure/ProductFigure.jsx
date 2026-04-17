@@ -1,33 +1,55 @@
 import "./productFigure.scss";
-import productimage from "../../assets/sagproduct.jpg";
-import products from "../../assets/products";
 import { Link } from "react-router-dom";
 import { useCartStore } from "../../store/cart-store";
 
 const ProductFigure = ({ product }) => {
   const { addItem } = useCartStore();
-
-  const { productName, price, image, amount, id } = product;
+  const { _id, productName, price, image, colors } = product;
 
   return (
-    <div className="productFigure" key={id}>
+    <div className="productFigure">
       <div className="productFigure__container">
         <div className="productFigure__imageContainer">
-          <img src={productimage} alt="sag" />
+          {image ? (
+            <img src={image} alt={productName} />
+          ) : (
+            <div className="productFigure__imagePlaceholder" />
+          )}
         </div>
-        <p className="productFigure__title">
-          {productName}
-          <br />
-        </p>
+        {colors?.length > 0 && (
+          <div className="productFigure__colors">
+            {colors.slice(0, 5).map((color) => (
+              <span
+                key={color}
+                className="productFigure__colorDot"
+                style={{ backgroundColor: color }}
+                title={color}
+              />
+            ))}
+            {colors.length > 5 && (
+              <span className="productFigure__colorMore">+{colors.length - 5}</span>
+            )}
+          </div>
+        )}
+        <p className="productFigure__title">{productName}</p>
         <p>₪{price}</p>
       </div>
       <div className="productFigure__btnContainer">
-        <Link to="/product/1" className="productFigure__btn btn">
+        <Link to={`/product/${_id}`} className="productFigure__btn btn">
           פרטים
         </Link>
         <button
           className="productFigure__btn btn-green"
-          onClick={() => addItem({ productName, price, image, amount, id })}
+          onClick={() =>
+            addItem({
+              id: _id,
+              productName,
+              price,
+              image,
+              amount: 1,
+              selectedColor: colors?.length > 0 ? colors[0] : null,
+            })
+          }
         >
           הוסף לעגלה
         </button>
@@ -35,4 +57,5 @@ const ProductFigure = ({ product }) => {
     </div>
   );
 };
+
 export default ProductFigure;
